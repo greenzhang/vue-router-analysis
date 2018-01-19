@@ -220,13 +220,14 @@ export class History {
           // 对应第十一步，调用$nextTick
           this.router.app.$nextTick(() => {
             //对应第十二步，执行beforeRouteEnter守卫中传给next的回调函数
+            // postEnterCbs时在调用extractEnterGuard方法提取beforeRouteEnter守卫时赋值的
             postEnterCbs.forEach(cb => { cb() })
           })
         }
       })
     })
   }
-
+  // 在路由跳转后，更新路由
   updateRoute (route: Route) {
     const prev = this.current
     this.current = route

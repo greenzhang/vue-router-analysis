@@ -78,6 +78,7 @@ export function createMatcher (
     return _createRoute(null, location)
   }
 
+  // 
   function redirect (
     record: RouteRecord,
     location: Location
